@@ -7,12 +7,12 @@ var exportaClasses = function(){
 
 	//Definindo diretório do projeto atual
 	//var dirEntrada = 'C:\\workspace\\p2k-corr-14.14.01-d-planoB';
-	var dirEntrada = 'C:\\workspace\\plugin-acesso';
+	var dirEntrada = 'C:\\workspace\\serv-pedidos';
 
 	//Definindo diretório de saída das classes compiladas
 	var dirSaida = 'C:\\Users\\felipe.constantino\\Desktop\\classes exportadas\\teste';
 
-	var dirPDV;
+	var dirPDV = 'C:\\p2k';
 
 	//Recupera data atual da tentativa de exportação de classes
 	var dataInicio = Date.now();
@@ -88,7 +88,7 @@ var exportaClasses = function(){
 
 exportaClasses();
 var rule = new cron.RecurrenceRule();
-rule.minute = [0, 5,10,15,20,25,30,35,40,45,50,55];
+rule.second = [0, 5,10,15,20,25,30,35,40,45,50,55];
 cron.scheduleJob(rule, function(){
     exportaClasses();
 });

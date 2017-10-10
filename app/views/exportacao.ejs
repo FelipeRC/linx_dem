@@ -95,7 +95,7 @@
                             <!-- /.nav-second-level -->
                         </li>
 						<li>
-                            <a href="/exportacaoClasses"><i class="fa fa-file-code-o fa-fw"></i> Exportação de Classes</a>
+                            <a href="/exportacaoClasses"></i> Exportação de Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -105,6 +105,18 @@
         </nav>
 
         <div id="page-wrapper">
+            <form action="exportacao/alterar" id="exportacao_form" method="post">
+                <input type="hidden" name="is_active" id="is_active">
+            </form>
+            <div class="btn-group" role="group" aria-label="...">
+                <%if(exportacaoConf && exportacaoConf.isActive){%>
+                    <button type="button" class="btn btn-default glyphicon glyphicon-play active"></button>
+                    <button type="button" class="btn btn-default glyphicon glyphicon-stop" id="botao_stop"></button>
+                <%}else{%>
+                    <button type="button" class="btn btn-default glyphicon glyphicon-play" id="botao_play"></button>
+                    <button type="button" class="btn btn-default glyphicon glyphicon-stop active"></button>
+                <%}%>
+            </div>
             
         </div>
         <!-- /#page-wrapper -->
@@ -123,6 +135,19 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/js/sb-admin-2.js"></script>
+
+    <script type="text/javascript">
+        $( "#botao_play" ).click(function() {
+            $("#is_active").val(true);
+            $("#exportacao_form").submit();
+        });
+
+        $('#botao_stop').click(function(){
+            $("#is_active").val(false);
+            $("#exportacao_form").submit();
+        });
+
+    </script>
 
 </body>
 

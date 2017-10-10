@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 consign()
 .include('app/routes')
 .then('app/controllers')
+.then('app/models')
 .into(app);
 
 module.exports = app;

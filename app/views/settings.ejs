@@ -95,7 +95,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-file-code-o fa-fw"></i> Exportação de Classes</a>
+                            <a href="/exportacaoClasses"><i class="fa fa-file-code-o fa-fw"></i> Exportação de Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -115,18 +115,18 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">          
+                                    <form role="form" method="post" action="/settings/salvar">          
                                         <div class="form-group">
                                             <label data-toggle="tooltip" title="Diretório do projeto.">Diretório do projeto:</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="dirProjeto" value="<%= settings.dirProjeto%>">
                                         </div>
                                         <div class="form-group">
                                             <label>Diretório de saída das classes exportadas:</label>
-                                            <input class="form-control">
+                                            <input class="form-control" name="dirOutputClasses" value="<%= settings.dirOutputClasses%>">
                                         </div>
                                         
                                         <button type="submit" class="btn btn-default">Salvar</button>
-                                        <button type="reset" class="btn btn-default">Limpar</button>
+                                        <button type="reset" class="btn btn-default">Reset</button>
                                     </form>
                                 </div>
                         </div>
